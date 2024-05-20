@@ -105,16 +105,72 @@ az account list-locations
 
 Create Resource Group
 ```
-az group create --name LigaAc-rg --location westeurope
+az group create --name LigaAc-rg --location eastus
 ```
 
 Create Azure container registry (ACR)
 ```
-az acr create --resource-group LigaAc-rg --name fredysa --sku Basic
+az acr create --resource-group LigaAc-rg --name ligaac --sku Basic
 ```
-## CReate Kubernets AKS  in Azure
+Login to Azure in local AZ Cli
+```
+az login
+```
+Login to ACR in your local ACR
 
+```
+az acr login --name ligaac
+```
 
+Check ACR Instance :  
 
+```
+ az acr list --resource-group LigaAc-rg --query "[].{acrLoginServer:loginServer}"  --output table
+```
 
+Prepare your local docker image to be push to Azure ACR:
+```
+docker image tag fredysa/webligaac:latest ligaac.azurecr.io/webligaac:latest
+```
+
+Push to Azure ACR:
+```
+docker image push ligaac.azurecr.io/webligaac:latest
+```
+
+Check output
+```
+az acr repository list --name ligaac --output table
+```
+## Create Kubernets AKS  in Azure
+
+Create cluster / wait 
+```
+az aks create  --resource-group LigaAc-rg --name LigaAc-rg-cluster --node-count 2 --generate-ssh-keys --attach-acr ligaac
+```
+
+Instal Kubernets cli
+```
+az aks install-cli
+```
+
+Login to Kubernets CLI
+```
+az aks get-credentials --resource-group LigaAc-rg --name LigaAc-rg-cluster
+```
+Test Kubernets cli
+
+```
+kubectl get nodes
+```
+
+Deploying our application to the Kubernetes cluster
+```
+kubectl apply -f webligaac.yaml
+```
+
+```
+ kubectl get service webligaac --watch
+ 
+ ```
 

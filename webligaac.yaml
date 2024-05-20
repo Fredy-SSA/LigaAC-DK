@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webligaac 
+  name: webligaac
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: webligaac
-      service: webligaac
+      service: webligaac 
   template:
     metadata:
       labels:
-        app: webligaac
-        service: webligaac
+        app: webligaac 
+        service: webligaac 
     spec:
       containers:
-      - image: fredysa/webligaac:latest
-        name: webligaac
+      - image: ligaac.azurecr.io/webligaac:latest
+        name: webligaac 
         ports:
         - containerPort: 80
           protocol: TCP
@@ -26,10 +26,11 @@ kind: Service
 metadata:
   name: webligaac
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 80
     protocol: TCP
   selector:
-    app: webligaac
+    app: webligaac 
     service: webligaac
+
