@@ -49,6 +49,8 @@ git clone https://github.dev/Fredy-SSA/LigaAC-DK
 
 ## Create DockerHub Repositories
 
+- Download a web template "\src" 
+
 ## Create Kubernets Cluster in Azure
 
 ## CReate Kubernets AKS  in Azure
