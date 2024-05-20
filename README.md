@@ -53,7 +53,7 @@ git clone https://github.dev/Fredy-SSA/LigaAC-DK
 - Use Dockerfile  
 
 ## Create Kubernets Cluster in Azure
->>>>>>> a3bb76268ad31cef5badbd86769a560d15424e50
+
 
 1 - Build Docker Image
 
