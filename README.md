@@ -40,7 +40,6 @@ wsl --set-default Ubuntu
 
 ### Get Code
 
-***PowerShell:***
 ```powershell
 git clone https://github.dev/Fredy-SSA/LigaAC-DK
 ```
@@ -49,12 +48,67 @@ git clone https://github.dev/Fredy-SSA/LigaAC-DK
 
 ## Create DockerHub Repositories
 
-## Create Kubernets Cluster in Azure
+- Download a web temlate "/src"
+- Use Dockerfile  
 
+1 - Build Docker Image
+
+```powershell
+docker image build -t webapp .
+
+docker image ls
+```
+2 - Rename Image tag
+
+```powershell
+docker image tag webapp fredysa/webligaac:latest
+docker image ls
+
+```
+
+3 - Test Image/Container
+
+```powershell
+
+docker container run -it --rm -p 8080:80  -d --name webligaac  fredysa/webligaac
+
+```
+4 - Publish to Dockerhub 
+
+```powershell
+
+docker login
+
+```
+```powershell
+
+docker push fredysa/webligaac
+
+```
+
+## Create Azure Repositories 
+
+
+Install Azure CLI  https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli or use WebShell
+```
+az --version
+
+az account list-locations
+
+```
+
+Create Resource Group
+```
+az group create --name LigaAc-rg --location westeurope
+```
+
+Create Azure container registry (ACR)
+```
+az acr create --resource-group LigaAc-rg --name fredysa --sku Basic
+```
 ## CReate Kubernets AKS  in Azure
 
 
-# Publish App in Azure AKS
 
 
 
