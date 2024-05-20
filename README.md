@@ -21,7 +21,7 @@ wsl --set-version ubuntu 2
 wsl --set-default-version 2
 wsl --set-default Ubuntu
 ```
-
+dd
 
 ## Install your Linux distribution of choice from Microsoft store
 
