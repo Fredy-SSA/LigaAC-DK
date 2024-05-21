@@ -99,7 +99,7 @@ docker push fredysa/webligaac
 Install Azure CLI  https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli or use WebShell
 ```
 az --version
-
+az login
 az account list-locations
 
 ```
