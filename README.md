@@ -48,9 +48,12 @@ git clone https://github.dev/Fredy-SSA/LigaAC-DK
 
 ## Create DockerHub Repositories
 
+- Create account in  : https://hub.docker.com/
 
 - Download a web temlate "/src"
-- Use Dockerfile  
+- Use Dockerfile
+
+  
 
 ## Create Kubernets Cluster in Azure
 
