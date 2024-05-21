@@ -2,8 +2,8 @@
 
 ## Install Git/Docker
 
-Download Git : https://git-scm.com/downloads 
-Download Docker : https://www.docker.com/products/docker-desktop/
+- Download Git : https://git-scm.com/downloads 
+- Download Docker : https://www.docker.com/products/docker-desktop/
 
 
 git --version
