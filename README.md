@@ -41,7 +41,7 @@ wsl --set-default Ubuntu
 ### Get Code
 
 ```powershell
-git clone https://github.dev/Fredy-SSA/LigaAC-DK
+git clone https://github.com/Fredy-SSA/LigaAC-DK
 ```
 
 - https://docs.docker.com/get-started/
