@@ -5,10 +5,10 @@
 - Download Git : https://git-scm.com/downloads 
 - Download Docker : https://www.docker.com/products/docker-desktop/
 
-
+```
 git --version
 docker --version
-
+```
 ### Install/Configure WSL 2
 
 - https://learn.microsoft.com/en-us/windows/wsl/install
